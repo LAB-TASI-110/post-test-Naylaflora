@@ -1,0 +1,15 @@
+buat sebuah program menggunakan bahasa c "buat stok baranngcyang disimpan disebuah rak gedung. dengan pola nya yaitu (seperti pada gambar 1 yang saya kirim) 
+nanti kita akan memasukkan inputan
+1. jumlah total data (N) 
+2. Deret stok (s1,s2, ... , sN)
+3. Kode kategori barang (nama barang pada gambar 1 kita misalkan kode pada 
+1. minyak = my
+2. rok pramuka = rp
+3. gula = gl
+4. Dasi Sd = ds)
+
+Output yang diinginkan adalah menentukan stok hanya untuk kategori yang diminta seperti pada syarat inputan 3
+
+kenapa outputnya begitu
+
+pada instruksi masukan data tau jumlah kode apa yang kita input
