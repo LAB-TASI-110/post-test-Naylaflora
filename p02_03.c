@@ -1,76 +1,73 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    // Deklarasi variabel
-    char nama[50];
-    int jumlahMinuman[5] = {0, 0, 0, 0, 0}; // Teh Manis, BengBeng, Nutrisari, Capucino, Pop Ice
-    int jumlahSnack[5] = {0, 0, 0, 0, 0};   // Tahu, Tempe, Bakwan, Risol, Roti Isi Ayam
-    int tipeMakan, metodeBayar;
-    int hargaSatuan = 5000;
-    int totalHarga = 0;
+    char namaPelanggan[50];
+    int pilihan, jumlah, totalHarga = 0;
+    int pilihanLayanan, pilihanPembayaran;
+    char lanjut;
 
-    printf("=== Sistem Kafetaria IT Del ===\n");
-    
-    // Input Nama
-    printf("Masukkan Nama Anda: ");
-    scanf("%s", nama);
+    printf("=== SISTEM KASIR KAFETARIA IT DEL ===\n");
+    printf("Masukkan Nama Pelanggan: ");
+    fgets(namaPelanggan, sizeof(namaPelanggan), stdin);
+    namaPelanggan[strcspn(namaPelanggan, "\n")] = 0;
 
-    // Input Pesanan Minuman
-    printf("\n--- Menu Minuman (Semua Rp 5.000) ---\n");
-    printf("Berapa Teh Manis? "); scanf("%d", &jumlahMinuman[0]);
-    printf("Berapa BengBeng? ");   scanf("%d", &jumlahMinuman[1]);
-    printf("Berapa Nutrisari? ");  scanf("%d", &jumlahMinuman[2]);
-    printf("Berapa Capucino? ");   scanf("%d", &jumlahMinuman[3]);
-    printf("Berapa Pop Ice? ");    scanf("%d", &jumlahMinuman[4]);
+    // Perulangan untuk memesan minuman dan makanan
+    do {
+        printf("\n--- MENU KAFETARIA ---\n");
+        printf("[MINUMAN]\n");
+        printf("1. Taro Latte   (17.000)  4. Kentang Goreng (15.000)\n");
+        printf("2. Brown Sugar  (19.000)  5. Donat          (18.000)\n");
+        printf("3. Matcha Latte (17.000)  6. Dimsum         (21.000)\n");
+        printf("                          7. Burger         (17.000)\n");
+        printf("                          8. Pizza          (35.000)\n");
+        
+        printf("\nPilih Nomor Menu: ");
+        scanf("%d", &pilihan);
+        printf("Masukkan Jumlah: ");
+        scanf("%d", &jumlah);
 
-    // Input Pesanan Snack
-    printf("\n--- Menu Makanan Ringan (Semua Rp 5.000) ---\n");
-    printf("Berapa Tahu? ");           scanf("%d", &jumlahSnack[0]);
-    printf("Berapa Tempe? ");          scanf("%d", &jumlahSnack[1]);
-    printf("Berapa Bakwan? ");         scanf("%d", &jumlahSnack[2]);
-    printf("Berapa Risol? ");          scanf("%d", &jumlahSnack[3]);
-    printf("Berapa Roti Isi Ayam? ");  scanf("%d", &jumlahSnack[4]);
+        // Logika penentuan harga
+        int hargaSatuan = 0;
+        switch(pilihan) {
+            case 1: hargaSatuan = 17000; break;
+            case 2: hargaSatuan = 19000; break;
+            case 3: hargaSatuan = 17000; break;
+            case 4: hargaSatuan = 15000; break;
+            case 5: hargaSatuan = 18000; break;
+            case 6: hargaSatuan = 21000; break;
+            case 7: hargaSatuan = 17000; break;
+            case 8: hargaSatuan = 35000; break;
+            default: printf("Pilihan tidak valid!\n");
+        }
 
-    // Opsi Makan
-    printf("\nTipe Pesanan (1. Take Away, 2. Makan di Sini): ");
-    scanf("%d", &tipeMakan);
+        totalHarga += (hargaSatuan * jumlah);
 
-    // Metode Pembayaran
-    printf("Metode Pembayaran (1. Cash, 2. QRIS): ");
-    scanf("%d", &metodeBayar);
+        printf("Tambah pesanan lagi? (y/n): ");
+        scanf(" %c", &lanjut); // Spasi sebelum %c untuk membersihkan buffer
 
-    // Hitung Total
-    for(int i = 0; i < 5; i++) {
-        totalHarga += (jumlahMinuman[i] * hargaSatuan);
-        totalHarga += (jumlahSnack[i] * hargaSatuan);
-    }
+    } while (lanjut == 'y' || lanjut == 'Y');
 
-    // Output Ringkasan Pesanan
-    printf("\n==================================\n");
-    printf("        STRUK KAFETARIA IT DEL      \n");
-    printf("==================================\n");
-    printf("Nama Pelanggan  : %s\n", nama);
-    printf("Tipe Pesanan    : %s\n", (tipeMakan == 1) ? "Take Away" : "Makan di Sini");
-    printf("Metode Bayar    : %s\n", (metodeBayar == 1) ? "Cash" : "QRIS");
-    printf("----------------------------------\n");
-    printf("Rincian Pesanan:\n");
-    
-    // Menampilkan hanya yang dipesan (jumlah > 0)
-    if(jumlahMinuman[0] > 0) printf("- Teh Manis (%d)\n", jumlahMinuman[0]);
-    if(jumlahMinuman[1] > 0) printf("- BengBeng (%d)\n", jumlahMinuman[1]);
-    if(jumlahMinuman[2] > 0) printf("- Nutrisari (%d)\n", jumlahMinuman[2]);
-    if(jumlahMinuman[3] > 0) printf("- Capucino (%d)\n", jumlahMinuman[3]);
-    if(jumlahMinuman[4] > 0) printf("- Pop Ice (%d)\n", jumlahMinuman[4]);
-    
-    if(jumlahSnack[0] > 0) printf("- Tahu (%d)\n", jumlahSnack[0]);
-    if(jumlahSnack[1] > 0) printf("- Tempe (%d)\n", jumlahSnack[1]);
-    if(jumlahSnack[2] > 0) printf("- Bakwan (%d)\n", jumlahSnack[2]);
-    if(jumlahSnack[3] > 0) printf("- Risol (%d)\n", jumlahSnack[3]);
-    if(jumlahSnack[4] > 0) printf("- Roti Isi Ayam (%d)\n", jumlahSnack[4]);
+    // Pilihan Layanan
+    printf("\n--- METODE LAYANAN ---\n");
+    printf("1. Take Away\n2. Makan Di Sini\nPilih: ");
+    scanf("%d", &pilihanLayanan);
 
-    printf("----------------------------------\n");
+    // Pilihan Pembayaran
+    printf("\n--- METODE PEMBAYARAN ---\n");
+    printf("1. Cash\n2. QRIS\nPilih: ");
+    scanf("%d", &pilihanPembayaran);
+
+    // Output Ringkasan
+    printf("\n======================================\n");
+    printf("         STRUK AKHIR KAFETARIA         \n");
+    printf("======================================\n");
+    printf("Nama Pelanggan  : %s\n", namaPelanggan);
+    printf("Metode Layanan  : %s\n", (pilihanLayanan == 1) ? "Take Away" : "Makan Di Sini");
+    printf("Metode Bayar    : %s\n", (pilihanPembayaran == 1) ? "Cash" : "QRIS");
+    printf("--------------------------------------\n");
     printf("TOTAL PEMBAYARAN: Rp %d\n", totalHarga);
-    printf("==================================\n");
+    printf("======================================\n");
 
     return 0;
 }

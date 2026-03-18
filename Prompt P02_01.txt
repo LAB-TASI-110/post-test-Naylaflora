@@ -1,6 +1,5 @@
-Buatkan sebuah program bahasa c dari permasalah berikut
-Dua mahasiswa yang ingin mengirim beberapabarang ke kampung halaman mereka masing masing. Permasalahannya adalah jika mereka mengirim melalui jasa biasa maka biayanya mahal, tetapii ada satu jasa pengiriman yaitu "Del-Express" yang sistem dan perhitungannya otomatis. Mereka pergi ke kantor jasa pengiriman "Del-Express" dan mereka melihat data yang berisi daftar ongkos kirim per kg ke beberapa kota tujuan , yaitu (gambar 1 yang saya kirim). Mereka juga melihat ada sebuah poster promo , yaitu (gambar 2 yang saya kirim) . 
-Akhirnya petugas menimbang kardus mereka yang ternyata ukuran dus nya berbeda , yaitu (gambar 3 yang saya kirim)
-Sistem jasa pengiriman nya kan tadi otomatis, jika kita input kode kota tujuan (pada gambar1) dan berat paket butet maka sistem akan menghitung seluruh biaya pengiriman termasuk berat paket ucok
-buat lah pemograman bahasa c 
-dengan syarat outputnya adalah  "Struk Pembayaran yang terdiri dari: Kota tujuan, Berat paket Butet, Berat paket Ucok, Total berat, Total ongkos kirim, Informasi promo yang diperoleh"
+Buatkan sebuah program bahasa c dari permasalahan berkut
+Duamahasiswa yang ingin mengirim beberapa barang ke kampung halaman mereka masing masing. Permasalahannya adalah jika mereka mengirim melalui jasa biasa maka biayanya mahal, tetapi asa datu jasa pengiriman yaitu, "DEL-EXPRESS" yang sistem dan perhitungannya otomatis. Mereka pergi ke kantor jasa pengiriman "DEL-EXPRESS" dan mereka melihat data yang berisiongkos kirim per kg ke beberapa kota tujuan, yaitu (gambar 1 yang saya kirim). Mereka juga melihat ada sebuah poster promo, yaitu (gambar 2 yang saya kirim). 
+Akhirnya petugas menimbang kardus mereka yang ternyata ukuran dusnya berebeda yaitu, (gambar 3 yang saya kirim). 
+Sistem jasa pengiriman nya kan tadi otomatis, jika kita input kota tujuan (seperti gambar 1) dan berat paket butet maka sistem akan menghitung seluruh biaya pengiriman termasuk berat paket ucok.
+Buat lah pemograman bahasa c dengan syarat outputnya adalahlah ""struk pembayaran yang terdiri dari :Kota tujuan, berat paket butet, berat paket ucok, total berat, total ongkos kirim, informasi promo yang diperoleh" 
